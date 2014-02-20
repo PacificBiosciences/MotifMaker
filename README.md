@@ -69,30 +69,32 @@ PacBio modification detection workflow.  The reprocess command
 annotates the the gff with motif information for better genome
 browsing.
 
->java -jar target/motif-maker-0.2.one-jar.jar
->
->Usage: MotifMaker [options] [command] [command options]
->  Options:
->    -h, --help
->                 Default: false
->  Commands:
->    find      Run motif finding
->      Usage: find [options]
->        Options:
->        * -f, --fasta      Reference fasta file
->        * -g, --gff        modifications.gff or .gff.gz file
->          -m, --minScore   Minimum Qmod score to use in motif finding
->                           Default: 40.0
->        * -o, --output     Output motifs csv file
->          -x, --xml        Output motifs xml file
->
->    reprocess      Reprocess gff file with motif information
->      Usage: reprocess [options]
->        Options:
->          -c, --csv           Raw modifications.csv file
->        * -f, --fasta         Reference fasta file
->        * -g, --gff           original modifications.gff or .gff.gz file
->              --minFraction   Only use motifs above this methylated fraction
->                              Default: 0.75
->        * -m, --motifs        motifs csv
->        * -o, --output        Reprocessed modifications.gff file
+```
+$ java -jar target/motif-maker-0.2.one-jar.jar
+
+Usage: MotifMaker [options] [command] [command options]
+  Options:
+    -h, --help
+                 Default: false
+  Commands:
+    find      Run motif finding
+      Usage: find [options]
+        Options:
+        * -f, --fasta      Reference fasta file
+        * -g, --gff        modifications.gff or .gff.gz file
+          -m, --minScore   Minimum Qmod score to use in motif finding
+                           Default: 40.0
+        * -o, --output     Output motifs csv file
+          -x, --xml        Output motifs xml file
+
+    reprocess      Reprocess gff file with motif information
+      Usage: reprocess [options]
+        Options:
+          -c, --csv           Raw modifications.csv file
+        * -f, --fasta         Reference fasta file
+        * -g, --gff           original modifications.gff or .gff.gz file
+              --minFraction   Only use motifs above this methylated fraction
+                              Default: 0.75
+        * -m, --motifs        motifs csv
+        * -o, --output        Reprocessed modifications.gff file
+```
