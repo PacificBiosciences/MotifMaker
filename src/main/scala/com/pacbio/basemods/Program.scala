@@ -243,7 +243,7 @@ object MotifUtils
 	
 	def loadRawModsData(genomeInfo : GenomeInfo, fn : String) =
 	{
-	  var reader = new CSVReader(Reader.getReader(fn));
+	  var reader = new CSVReader(Reader.getReader(fn), ',', '"', '\0');
 	  
 	  // Read first line to get csv headers
 	  var nextLine = reader.readNext()
