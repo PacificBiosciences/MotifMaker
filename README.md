@@ -98,3 +98,28 @@ Usage: MotifMaker [options] [command] [command options]
         * -m, --motifs        motifs csv
         * -o, --output        Reprocessed modifications.gff file
 ```
+
+
+Output file descriptions:
+-------------------------
+
+Using the ``find`` command:
+
+- Output csv file: This file follows the same format as the standard
+  "Fields included in motif_summary.csv" described in the Methylome
+  Analysis White Paper
+  (https://github.com/PacificBiosciences/Bioinformatics-Training/wiki/Methylome-Analysis-Technical-Note).
+
+- Output xml file: This is an output used by SMRT Portal and is not
+  necessary using the command line. Simply do not include the -x
+  command option. The information contained in this file is used to
+  fill in the standard motif report table in SMRT Portal and is
+  redundant with the CSV output file.
+
+Using the ``reprocess`` command:
+(Reprocessing will update a modifications.gff file with information based on new Modification QV thresholds)
+
+- Output gff file: The format of the output file is the same as the
+  input file, and is described in the Methylome Analysis White Paper
+  (https://github.com/PacificBiosciences/Bioinformatics-Training/wiki/Methylome-Analysis-White-Paper)
+  under "Fields included in the modifications.gff file".
