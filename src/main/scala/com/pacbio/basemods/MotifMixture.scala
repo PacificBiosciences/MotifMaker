@@ -258,7 +258,7 @@ object Reader {
         var pairs = kvp.split(";") map (i => { var r = i.split("="); (r(0).trim(), r(1))}) toMap
         
         
-        var refId = cols(0)
+        var refId = cols(0).split("\\s+")(0)
         //var refNum = refId.substring(3).toInt - 1
         var refNum = genome.nameToId(refId)
         
@@ -327,7 +327,7 @@ object Reader {
 	        case _ => ()
 	      } 
 	      
-	      currentHeader = Some(l.substring(1))
+	      currentHeader = Some(l.substring(1).split("\\s+")(0))
 	      buf = new StringBuffer()
 	    }
 	    else
