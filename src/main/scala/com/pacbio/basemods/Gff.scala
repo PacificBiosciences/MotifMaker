@@ -110,7 +110,7 @@ object Gff {
     var pairs = cols(8).split(";") map (i => { var r = i.split("="); (r(0).trim(), r(1))}) toMap
     
     new GffRow(
-        seqId = cols(0),
+        seqId = cols(0).split(" ")(0),
         source = cols(1),
         
         entryType = cols(2),
