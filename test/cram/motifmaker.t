@@ -1,6 +1,6 @@
 Test command-line execution of MotifMaker.
 
-  $ JAVA="$TESTDIR/../../../../../prebuilt.out/java/java/bin/java"
+  $ JAVA="$TESTDIR/../../../../../../prebuilt.out/java/java/bin/java"
   $ DATA="$TESTDIR/../../src/test/resources"
   $ JAR_FILE="$TESTDIR/../../target/motif-maker-0.2.one-jar.jar"
   $ GFF="$DATA/mods_TGATCCAGG.gff"
