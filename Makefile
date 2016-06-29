@@ -20,7 +20,7 @@
 # PJM July 2012
 #
 
-G_TOPDIR              = ../../../..
+G_TOPDIR              = ../../../../..
 JAVA_HOME            ?= $(shell echo `bash -c "cd $(G_TOPDIR)/smrtanalysis/prebuilt.out/java/java;pwd"`)
 LOCAL_MVN_REPOSITORY := $(shell echo `bash -c "cd $(G_TOPDIR)/smrtanalysis/prebuilt.out/maven/apache-maven-localrepos;pwd"`)
 MVN                  := $(G_TOPDIR)/smrtanalysis/prebuilt.out/maven/apache-maven-3.0.4/bin/mvn
