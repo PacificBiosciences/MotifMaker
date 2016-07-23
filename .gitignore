@@ -1,0 +1,25 @@
+*.class
+*.log
+*.swp
+.cache
+.history
+.lib/
+dist/*
+MotifMaker/target
+target/streams
+project/target
+project/project
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+docs/_build/*
+db/*
+.idea
+
+# ensime-specific
+.ensime
+.ensime_cache
+
+# IntelliJ
+.idea/*
