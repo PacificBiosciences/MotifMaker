@@ -1,15 +1,14 @@
 Test command-line execution of MotifMaker.
 
-  $ JAVA="$TESTDIR/../../../../../../prebuilt.out/java/java/bin/java"
-  $ DATA="$TESTDIR/../../src/test/resources"
-  $ JAR_FILE="$TESTDIR/../../target/motif-maker-0.2.one-jar.jar"
+  $ EXE="$TESTDIR/../../MotifMaker/target/pack/bin/motifMaker"
+  $ DATA="$TESTDIR/../../MotifMaker/src/test/resources"
   $ GFF="$DATA/mods_TGATCCAGG.gff"
   $ FASTA="$DATA/Geobacter_metallireducens_gDNA.fasta"
 
 For some reason the help output includes unnecessary whitespace at the end of
 certain lines...
 
-  $ $JAVA -jar $JAR_FILE
+  $ $EXE
   Usage: MotifMaker [options] [command] [command options]
     Options:
       -h, --help   
@@ -42,7 +41,7 @@ certain lines...
 
 Now try running with the data used for unit tests (trimmed down to a subset of motifs):
 
-  $ $JAVA -jar $JAR_FILE find --gff $GFF --fasta $FASTA --output motifs_test.csv
+  $ $EXE find --gff $GFF --fasta $FASTA --output motifs_test.csv
   Motif Searching...
   Motif Refinement...
   Found motif: TGATCCAGG
