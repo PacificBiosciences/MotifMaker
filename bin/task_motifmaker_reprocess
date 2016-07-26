@@ -26,7 +26,7 @@ class Constants(object):
     # installing
     DIST_PATH = os.path.dirname(os.path.dirname(__file__))
     DRIVER_EXE = "task_motifmaker_reprocess --resolved-tool-contract "
-    MIN_FRACTION_DEFAULT = 30.0
+    MIN_FRACTION_DEFAULT = 0.30
     MIN_FRACTION_ID = "motif_maker.task_options.min_fraction"
 
 def get_parser():
