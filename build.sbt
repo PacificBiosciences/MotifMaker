@@ -26,4 +26,7 @@ def PacBioProject(name: String): Project = (
   .settings(
     testOptions in Test += Tests.Argument(TestFrameworks.Specs2, "junitxml", "console"))
 
-lazy val motifMaker = PacBioProject("MotifMaker")
+lazy val motifMaker = (
+  PacBioProject("MotifMaker")
+    settings(mainClass in assembly := Some("com.pacbio.basemods.Program"))
+  )
