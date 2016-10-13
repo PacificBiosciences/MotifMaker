@@ -41,8 +41,8 @@ def get_parser():
         "GFF file containing modified bases")
     p.add_input_file_type(FileTypes.DS_REF, "reference", "ReferenceSet",
         "Reference DataSet xml or Fasta sequence")
-    p.add_output_file_type(FileTypes.CSV, "csv", "CSV file",
-        "CSV file of motifs", default_name="motifs")
+    p.add_output_file_type(FileTypes.CSV, "csv", "Motifs Summary",
+        "Summary of analysis results for each motif", default_name="motifs")
     p.add_float(Constants.MIN_SCORE_ID, "minScore",
         Constants.MIN_SCORE_DEFAULT,
         "Minimum Qmod score",
