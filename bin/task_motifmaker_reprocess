@@ -42,8 +42,8 @@ def get_parser():
         "CSV file of motifs")
     p.add_input_file_type(FileTypes.DS_REF, "reference", "ReferenceSet",
         "Reference DataSet or Fasta sequence")
-    p.add_output_file_type(FileTypes.GFF, "gff_out", "Modified base motifs GFF file",
-        "GFF file of modified bases in motifs only", default_name="motifs")
+    p.add_output_file_type(FileTypes.GFF, "gff_out", "Modified Base Motifs Summary",
+        "Summary of analysis results for each kinModCall with motif information", default_name="motifs")
     p.add_float(Constants.MIN_FRACTION_ID, "minFraction",
         Constants.MIN_FRACTION_DEFAULT,
         "Minimum methylated fraction",
