@@ -734,7 +734,7 @@ case class Pair[A](v1: A, v2: A) extends MotifGroup[A]
     var summaries = goodMotifs map (m => summarizeEvidence(genomeInfo, allMods, m))
 
     var unclustered = computeUnclustered(allMods, genomeInfo, goodMotifs)
-    (summaries.sortBy(c => - c.fraction), unclustered)
+    (summaries.sortBy(c => - c.objectiveScore), unclustered)
   }
 
   def writeMotifCsv(fn: File, motifs: List[MotifSummary]) =
@@ -801,7 +801,7 @@ case class Pair[A](v1: A, v2: A) extends MotifGroup[A]
     println("Got results:")
     for(m <- motifs)
       println(m)
-    writeMotifCsv(new File(output), motifs)
+    writeMotifCsv(new File(output), motifs.sortBy(m => - m.objectiveScore))
     // Optionally write output xml
     xmlOut match {
       case null => ()
