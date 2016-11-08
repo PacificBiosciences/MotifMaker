@@ -5,6 +5,7 @@
 .history
 .lib/
 dist/*
+target/
 MotifMaker/target
 target/streams
 project/target
