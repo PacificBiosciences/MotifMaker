@@ -8,7 +8,7 @@ organization in ThisBuild := "pacbio.smrt.motifmaker"
 scalaVersion in ThisBuild := "2.11.8"
 
 //scalacOptions in ThisBuild := Seq("-unchecked", "-deprecation", "-encoding", "utf8", "-feature")
-scalacOptions in ThisBuild := Seq("-encoding", "utf8")
+scalacOptions in ThisBuild := Seq("-encoding", "utf8", "-feature")
 
 credentials in ThisBuild += Credentials(Path.userHome / ".ivy2" / ".credentials")
 publishTo in ThisBuild := {
