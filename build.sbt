@@ -3,12 +3,19 @@ name := "MotifMaker"
 
 version in ThisBuild := "0.3.1"
 
-organization in ThisBuild := "com.pacbio"
+organization in ThisBuild := "pacbio.smrt.motifmaker"
 
 scalaVersion in ThisBuild := "2.11.8"
 
 //scalacOptions in ThisBuild := Seq("-unchecked", "-deprecation", "-encoding", "utf8", "-feature")
 scalacOptions in ThisBuild := Seq("-encoding", "utf8")
+
+credentials in ThisBuild += Credentials(Path.userHome / ".ivy2" / ".credentials")
+publishTo in ThisBuild := {
+  val nexus = "http://ossnexus.pacificbiosciences.com/repository/"
+  if (isSnapshot.value) Some("Nexus snapshots" at nexus + "maven-snapshots")
+  else Some("Nexus releases" at nexus + "maven-releases")
+}
 
 def PacBioProject(name: String): Project = (
   Project(name, file(name))
