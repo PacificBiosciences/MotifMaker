@@ -1,14 +1,15 @@
 
 name := "MotifMaker"
 
-version in ThisBuild := "0.3.1"
-
 organization in ThisBuild := "pacbio.smrt.motifmaker"
 
 scalaVersion in ThisBuild := "2.11.8"
 
 //scalacOptions in ThisBuild := Seq("-unchecked", "-deprecation", "-encoding", "utf8", "-feature")
 scalacOptions in ThisBuild := Seq("-encoding", "utf8", "-feature")
+
+val buildNumber = (if (sys.env.get("bamboo_buildNumber") != None) sys.env("bamboo_buildNumber") else "0")
+version in ThisBuild := "0.3.2" + "." + buildNumber + "-SNAPSHOT"
 
 credentials in ThisBuild += Credentials(Path.userHome / ".ivy2" / ".credentials")
 publishTo in ThisBuild := {
