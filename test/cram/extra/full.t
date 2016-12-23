@@ -1,7 +1,7 @@
 Test command-line execution of MotifMaker.
 
-  $ EXE="$TESTDIR/../../MotifMaker/target/pack/bin/motifMaker"
-  $ DATA="$TESTDIR/../../MotifMaker/src/test/resources"
+  $ EXE="$TESTDIR/../../../target/pack/bin/motifMaker"
+  $ DATA="$TESTDIR/../../../src/test/resources"
   $ GFF="$DATA/mods_TGATCCAGG.gff"
   $ FASTA="$DATA/Geobacter_metallireducens_gDNA.fasta"
 
