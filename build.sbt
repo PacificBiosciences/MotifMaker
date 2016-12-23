@@ -8,7 +8,7 @@ scalaVersion in ThisBuild := "2.11.8"
 //scalacOptions in ThisBuild := Seq("-unchecked", "-deprecation", "-encoding", "utf8", "-feature")
 scalacOptions in ThisBuild := Seq("-encoding", "utf8", "-feature")
 
-//val buildNumber = (if (sys.env.get("bamboo_buildNumber") != None) sys.env("bamboo_buildNumber") else "0")
+//val buildNumber = (if (sys.env.get("bamboo_buildNumber").isDefined) sys.env("bamboo_buildNumber") else "0")
 version in ThisBuild := "0.3.2-SNAPSHOT"
 
 credentials in ThisBuild += Credentials(Path.userHome / ".ivy2" / ".credentials")
@@ -20,7 +20,6 @@ publishTo in ThisBuild := {
 
 packSettings
 
-//def PacBioProject(name: String): Project = (
 lazy val motifMaker = (
   Project("MotifMaker", file("."))
     settings (
@@ -40,8 +39,3 @@ lazy val motifMaker = (
     testOptions in Test += Tests.Argument(TestFrameworks.Specs2, "junitxml", "console"))
 
 packMain := Map("motifMaker" -> "com.pacbio.basemods.Program")
-
-/*lazy val motifMaker = (
-  PacBioProject("MotifMaker")
-    settings(mainClass in assembly := Some("com.pacbio.basemods.Program"))
-  )*/
