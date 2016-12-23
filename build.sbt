@@ -18,8 +18,11 @@ publishTo in ThisBuild := {
   else Some("Nexus releases" at nexus + "maven-releases")
 }
 
-def PacBioProject(name: String): Project = (
-  Project(name, file(name))
+packSettings
+
+//def PacBioProject(name: String): Project = (
+lazy val motifMaker = (
+  Project("MotifMaker", file("."))
     settings (
       libraryDependencies ++= Seq(
         "org.scala-lang.modules" %% "scala-xml" % "1.0.2",
@@ -32,9 +35,13 @@ def PacBioProject(name: String): Project = (
   )
   .disablePlugins(plugins.JUnitXmlReportPlugin)
   .settings(
+    mainClass in assembly := Some("com.pacbio.basemods.Program"),
+    initialCommands in (Test, console) := """ammonite.repl.Main.run("")""",
     testOptions in Test += Tests.Argument(TestFrameworks.Specs2, "junitxml", "console"))
 
-lazy val motifMaker = (
+packMain := Map("motifMaker" -> "com.pacbio.basemods.Program")
+
+/*lazy val motifMaker = (
   PacBioProject("MotifMaker")
     settings(mainClass in assembly := Some("com.pacbio.basemods.Program"))
-  )
+  )*/
